@@ -22,6 +22,7 @@ services:
       # путь к sqlite-файлу внутри смонтированного тома
       - DATABASE_URL=file:./services/yummybot-service/prisma/dev.db
       - DETECTOR_URL=http://detector:8000
+      - FRIDGE_DETECTOR_URL=http://detector:8000/detect
     volumes:
       # монтируем папку prisma, чтобы миграции/seed создавали dev.db здесь
       - ./services/yummybot-service/prisma:/app/prisma
