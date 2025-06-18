@@ -1,0 +1,20 @@
+# Node
+**/node_modules/
+**/pnpm-lock.yaml
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+services/fridge-detector/.venv/
+
+# SQLite
+**/*.db
+
+# Env files
+.env
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+*.log
