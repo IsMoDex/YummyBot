@@ -7,7 +7,7 @@ services:
       context: ./services/fridge-detector
       dockerfile: Dockerfile
     env_file:
-      - ./.env
+      - ./services/fridge-detector/.env
     ports:
       - "8000:8000"
     container_name: yummybot-detector
@@ -17,13 +17,13 @@ services:
       context: ./services/yummybot-service
       dockerfile: Dockerfile
     env_file:
-      - ./.env
+      - ./services/yummybot-service/.env
     environment:
       # путь к sqlite-файлу внутри смонтированного тома
       - DATABASE_URL=file:./services/yummybot-service/prisma/dev.db
       - DETECTOR_URL=http://detector:8000
     volumes:
-      # смонтировать папку prisma, чтобы миграции вызывали dev.db в ней
+      # монтируем папку prisma, чтобы миграции/seed создавали dev.db здесь
       - ./services/yummybot-service/prisma:/app/prisma
     depends_on:
       - detector

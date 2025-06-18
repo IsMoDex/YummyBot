@@ -26,11 +26,11 @@ YummyBot/
 
 **Перед началом убедитесь, что склонировали оба микросервиса в папку `services/`:**
 ```bash
-cd YummyBot/services
+cd ./services
 # Клонируйте сервис бота
-git clone <url_to_yummybot-service_repo> yummybot-service
+git clone https://github.com/IsMoDex/yummybot-service.git
 # Клонируйте сервис распознавания
-git clone <url_to_fridge-detector_repo> fridge-detector
+git clone https://github.com/IsMoDex/fridge-detector.git
 cd ..
 ```
 
